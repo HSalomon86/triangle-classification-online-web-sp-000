@@ -1,3 +1,24 @@
 class Triangle
-  # write code here
+  def initialize(a, b, c)
+    @side1 = a
+    @side2 = b
+    @side3 = c
+  end
+
+  def kind
+    if (@side1 <= 0) || (@side2 <= 0) || (@side3 <= 0)
+      raise TriangleError
+    elsif (@side1+@side2 <= @side3) || (@side1+@side3 <= @side_2) || (@side2+@side3 <= @side_1)
+      raise TriangleError
+    else
+      if (@side1 == @side2) && (@side2 == @side3)
+       :equilateral
+     elsif (@side1 == @side2) || (@side2 == @side3) || (@side1 == @side3)
+       :isosceles
+     elsif (@side1 != @side2) && (@side2 != @side3) && (@side1 != @side3)
+       :scalene
+     end
+
+  end
+
 end
